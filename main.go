@@ -62,14 +62,14 @@ func main() {
     processOptions(options)
 
     if isValidURL(target) {
-        byp4xx(options, target)
+        pitebypass(options, target)
     } else {
         processFile(target, options)
     }
 }
 
 func showHelp() {
-    fmt.Println("byp4xx <cURL or byp4xx options> <URL or file>")
+    fmt.Println("pitebypass <cURL or pitebypass options> <URL or file>")
     fmt.Println("Some cURL options you may use as example:")
     fmt.Println("  -L follow redirections (30X responses)")
     fmt.Println("  -x <ip>:<port> to set a proxy")
@@ -160,14 +160,14 @@ func processFile(filePath string, options []string) {
     for scanner.Scan() {
         line := scanner.Text()
         if isValidURL(line) {
-            byp4xx(options, line)
+            pitebypass(options, line)
         } else {
             fmt.Println("Invalid URL in file:", line)
         }
     }
 }
 
-func byp4xx(options []string, url string) {
+func pitebypass(options []string, url string) {
     parts := strings.Split(strings.TrimRight(url, "/"), "/")
     lastPart = parts[len(parts)-1]
     previousParts = strings.Join(parts[:len(parts)-1], "/")
