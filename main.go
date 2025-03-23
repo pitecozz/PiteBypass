@@ -230,7 +230,7 @@ func curlCodeResponse(message string, options []string, url string) {
 
 func verbTampering(options []string, url string) {
     fmt.Println("\033[32m==VERB TAMPERING==\033[0m")
-    file, _ := os.Open("/usr/local/share/byp4xx/templates/verbs.txt")
+    file, _ := os.Open("/usr/local/share/pitebypass/templates/verbs.txt")
     defer file.Close()
 
     scanner := bufio.NewScanner(file)
@@ -249,7 +249,7 @@ func verbTampering(options []string, url string) {
 
 func headers(options []string, url string) {
     fmt.Println("\033[32m==HEADERS==\033[0m")
-    file, err := os.Open("/usr/local/share/byp4xx/templates/headers.txt")
+    file, err := os.Open("/usr/local/share/pitebypass/templates/headers.txt")
     if err != nil {
         fmt.Println("Error opening headers file:", err)
         return
@@ -259,7 +259,7 @@ func headers(options []string, url string) {
     scanner := bufio.NewScanner(file)
     for scanner.Scan() {
         header := scanner.Text()
-        file2, err := os.Open("/usr/local/share/byp4xx/templates/ip.txt")
+        file2, err := os.Open("/usr/local/share/pitebypass/templates/ip.txt")
         if err != nil {
             fmt.Println("Error opening IP file:", err)
             return
@@ -284,7 +284,7 @@ func headers(options []string, url string) {
 
 func userAgent(options []string, url string) {
     fmt.Println("\033[32m==USER AGENTS==\033[0m")
-    file, err := os.Open("/usr/local/share/byp4xx/templates/UserAgents.txt")
+    file, err := os.Open("/usr/local/share/pitebypass/templates/UserAgents.txt")
     if err != nil {
         fmt.Println("Error opening User-Agents file:", err)
         return
@@ -308,7 +308,7 @@ func userAgent(options []string, url string) {
 
 func extensions(options []string, url string) {
     fmt.Println("\033[32m==EXTENSIONS==\033[0m")
-    file, err := os.Open("/usr/local/share/byp4xx/templates/extensions.txt")
+    file, err := os.Open("/usr/local/share/pitebypass/templates/extensions.txt")
     if err != nil {
         fmt.Println("Error opening extensions file:", err)
         return
@@ -331,7 +331,7 @@ func extensions(options []string, url string) {
 
 func defaultCreds(options []string, url string) {
     fmt.Println("\033[32m==DEFAULT CREDS==\033[0m")
-    file, err := os.Open("/usr/local/share/byp4xx/templates/defaultcreds.txt")
+    file, err := os.Open("/usr/local/share/pitebypass/templates/defaultcreds.txt")
     if err != nil {
         fmt.Println("Error opening default credentials file:", err)
         return
@@ -382,7 +382,7 @@ func caseSensitive(options []string, url string) {
 
 func midPaths(options []string, url string) {
     fmt.Println("\033[32m==MID PATHS==\033[0m")
-    file, err := os.Open("/usr/local/share/byp4xx/templates/midpaths.txt")
+    file, err := os.Open("/usr/local/share/pitebypass/templates/midpaths.txt")
     if err != nil {
         fmt.Println("Error opening midpaths file:", err)
         return
@@ -406,7 +406,7 @@ func midPaths(options []string, url string) {
 
 func endPaths(options []string, url string) {
     fmt.Println("\033[32m==END PATHS==\033[0m")
-    file, err := os.Open("/usr/local/share/byp4xx/templates/endpaths.txt")
+    file, err := os.Open("/usr/local/share/pitebypass/templates/endpaths.txt")
     if err != nil {
         fmt.Println("Error opening endpaths file:", err)
         return
